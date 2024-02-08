@@ -1,4 +1,0 @@
-print("Welcome to the tip calculator!")
-bill = input("What was the bill?")
-payers = input ("How many people are spliting?")
-tip = input("How much do y'all want to tip? 10, 12, or 15%)

@@ -1,0 +1,13 @@
+print("Welcome to the tip calculator!")
+bill = input("What was the bill?")
+payers = input ("How many people are spliting?")
+tip = input("How much do y'all want to tip? 10, 12, or 15% ")
+bill = int(bill)
+payers = int(payers)
+tip = int(tip)
+share = bill / payers
+total = (share + (share * (tip * .01)))
+total = round(total)
+total = str(total)
+print("your fair share is " + total + " dollarydoos")
+exit()
