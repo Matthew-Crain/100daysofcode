@@ -10,11 +10,10 @@ else:
 
 if choice2 == 'wait':
     choice3 = input('You arrived at the island, there is a hut with 3 doors red, blue, and yellow, which do you choose?')
-    exit()
 else:
     print('You were eaten by sharks. GAME OVER')
-    exit();
-
+    exit()
+    
 if choice3 == 'red':
     print('fire erupts from the door burning you alive. GAME OVER')
     exit()
