@@ -40,9 +40,9 @@ else:
 print('VS')
 
 print(computer)
-if computer == '0':
+if computer == 0:
     print(rock)
-elif computer == '1':
+elif computer == 1:
     print(paper)
-elif computer == '2':
+else:
     print(scissors)
