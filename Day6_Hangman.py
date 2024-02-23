@@ -61,8 +61,6 @@ words = ["dog","cat","mouse","house","bog","hat","mat"]
 #Pick a word
 word = random.choice(words)
 wordln = len(word)
-#word output for testing
-print(f'the word is: ' + word)
 #create an empty list to hold blanks
 holder = []
 for letters in range(len(word)):
@@ -86,6 +84,8 @@ if '_' not in holder:
     print('YOU WIN')
     print(holder)
 else:
+    print(lives)
+    print(stages[lives])
     print('YOU LOSE')
     print(holder)
     print(f'the word was {word}')
