@@ -13,7 +13,7 @@ for letters in range(len(word)):
     holder += '_'
 #create while loop to allow repeatability
 lives = 5
-while lives != 0:
+while '_' in holder and lives != 0:
 #create an input to guess a letter
     print(f'lives: {lives}')
     print(holder)
@@ -21,19 +21,20 @@ while lives != 0:
     lives -= 1
     for position in range(wordln):
         letter = word[position]
-    if letter == guess:
-        holder[position] = guess
+        if letter == guess:
+            holder[position] = guess
 
-    if '_' not in holder:
-        print('YOU WIN')
-print('YOU LOSE')    
-
-#loop through guess
-
-
+if '_' not in holder:
+    print('YOU WIN')
+else:
+    print('YOU LOSE')
+  
 
 
-p
+
+
+
+
 
         
 
