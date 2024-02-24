@@ -1,36 +1,43 @@
 #import libraries
 import random
-import stages from Day6_hangman_stages
+import Day6_hangman_stages
+import day6_wordlist
 #create a word list
-words = ["dog","cat","mouse","house","bog","hat","mat"]
 #Pick a word
-word = random.choice(words)
+word = random.choice(day6_wordlist.word_list)
 wordln = len(word)
 #create an empty list to hold blanks
 holder = []
 for letters in range(len(word)):
     holder += '_'
 #create while loop to allow repeatability
-lives = 6
-while '_' in holder and lives > 0:
+used_letters = []
+current_lives = 6
+while '_' in holder and current_lives > 0:
 #create an input to guess a letter
-    print(f'lives: {lives}')
+    print(f'lives: {current_lives}')
     print(holder)
-    print(stages[lives])
-    lives -= 1
+    print(Day6_hangman_stages.stages[current_lives])
+    current_lives -= 1
     guess = input("please guess a letter: ").lower()
+    if guess in used_letters:
+        print(f'youve already used {guess} please use another letter')
+
+    used_letters += guess
     for position in range(wordln):
         letter = word[position]
         if letter == guess:
             holder[position] = guess 
-            lives = lives + 1
+            if current_lives < 6:
+                current_lives = current_lives + 1
+
 
 if '_' not in holder:
     print('YOU WIN')
     print(holder)
 else:
-    print(lives)
-    print(stages[lives])
+    print(current_lives)
+    print(Day6_hangman_stages.stages[current_lives])
     print('YOU LOSE')
     print(holder)
     print(f'the word was {word}')
